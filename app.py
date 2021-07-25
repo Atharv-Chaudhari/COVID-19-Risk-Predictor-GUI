@@ -73,7 +73,7 @@ def hello_world():
     return render_template("index.html")
 
 
-@app.route('/hello', methods=['POST', 'GET'])
+@app.route('/predict', methods=['POST', 'GET'])
 def predict():
     int_features = [x for x in request.form.values()]
     mail = int_features[0]
@@ -124,11 +124,11 @@ def predict():
 
     if (z >= float(0.50)):
         email(mail, mail_list, int(z * 100))
-        return render_template('templates/risky.html',
+        return render_template('risky.html',
                                pred="You Have {}% Risk".format(int(z * 100)))
     else:
         email(mail, mail_list, int(z * 100))
-        return render_template('templates/free.html',
+        return render_template('free.html',
                                pred="You Have {}% Risk".format(int(z * 100)))
 
 

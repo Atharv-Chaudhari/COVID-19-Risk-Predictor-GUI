@@ -46,8 +46,8 @@ def email(mail, mail_list, z):
 </body>
 </html>'''.format(**locals())
     #The mail addresses and password
-    sender_address = os.getenv('sender_address')
-    sender_pass = os.getenv('sender_pass')
+    sender_address = 'highriskcovid19@gmail.com'
+    sender_pass = 'RiskyCovid@19'
     receiver_address = mail
     #Setup the MIME
     message = MIMEMultipart()
@@ -124,10 +124,10 @@ def predict():
 
     if (z >= float(0.50)):
         email(mail, mail_list, int(z * 100))
-        return render_template("templates/risky.html",pred="You Have {}% Risk".format(int(z * 100)))
+        return render_template("risky.html",pred="You Have {}% Risk".format(int(z * 100)))
     else:
         email(mail, mail_list, int(z * 100))
-        return render_template("templates/free.html",pred="You Have {}% Risk".format(int(z * 100)))
+        return render_template("free.html",pred="You Have {}% Risk".format(int(z * 100)))
 
 
 if __name__ == '__main__':

@@ -73,7 +73,7 @@ def hello_world():
     return render_template("index.html")
 
 
-@app.route('/', methods=['POST', 'GET'])
+@app.route('/hello', methods=['POST', 'GET'])
 def predict():
     int_features = [x for x in request.form.values()]
     mail = int_features[0]

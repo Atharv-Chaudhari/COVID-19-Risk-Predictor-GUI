@@ -46,8 +46,8 @@ def email(mail, mail_list, z):
 </body>
 </html>'''.format(**locals())
     #The mail addresses and password
-    sender_address = 'highriskcovid19@gmail.com'
-    sender_pass = 'RiskyCovid@19'
+    sender_address = 'your_email'
+    sender_pass = 'mail_password'
     receiver_address = mail
     #Setup the MIME
     message = MIMEMultipart()
